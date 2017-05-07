@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mytype">
+        <item>选择类型</item>
+        <item>生活</item>
+        <item>工作</item>
+        <item>假期</item>
+        <item>娱乐</item>
+        <item>休闲</item>
+    </string-array>
+    
+</resources>
