@@ -106,10 +106,11 @@ public class Activity_Search extends AppCompatActivity{
                 int spinnerindex = cur.getInt(cur.getColumnIndex(NoteConstant.NOTE_SPINNER_INDEX));
                 NoteMsg note = new NoteMsg(id, title, type, date, mycontent, spinnerindex);
                 list.add(note);
-            } else {
-                Toast.makeText(this, "找不到事件", Toast.LENGTH_SHORT).show();
             }
 
+        }
+        if(list==null){
+            Toast.makeText(this, "找不到事件", Toast.LENGTH_SHORT).show();
         }
         return list;
     }
