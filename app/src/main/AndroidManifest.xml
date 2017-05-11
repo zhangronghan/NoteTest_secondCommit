@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/notitlebar">
-        <activity android:name=".UI.MainActivity">
+        <activity android:name=".View.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -16,16 +16,19 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".UI.Activity_Search"/>
+        <activity android:name=".View.Activity_Search"/>
 
-        <activity android:name=".UI.Activity_add"/>
+        <activity android:name=".View.Activity_add"/>
 
-        <activity android:name=".UI.Activity_update"/>
+        <activity android:name=".View.Activity_update"/>
 
         <provider
             android:authorities="com.example.administrator.notetest"
             android:name=".SQLite.MyContentProvider"/>
     </application>
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
 </manifest>

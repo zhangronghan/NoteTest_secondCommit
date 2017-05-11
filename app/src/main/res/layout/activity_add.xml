@@ -63,15 +63,45 @@
         android:entries="@array/mytype"/>
 
 
-    <EditText
+    <com.example.administrator.notetest.weiget.MyEditText
         android:id="@+id/edt_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="top"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_marginTop="10dp"
+        android:gravity="top"
         android:background="@drawable/shape"
         android:hint="内容"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_addImage"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:src="@mipmap/myimage"/>
+
+        <cn.zeffect.view.recordbutton.RecordButton
+            android:id="@+id/record_addSound"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:drawableBottom="@mipmap/ic_mysound"
+            android:background="#00000000"/>
+
+        <ImageView
+            android:id="@+id/iv_addFilm"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:src="@mipmap/film"/>
+
+    </LinearLayout>
 
 
 </LinearLayout>

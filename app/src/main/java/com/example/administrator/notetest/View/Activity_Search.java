@@ -1,4 +1,4 @@
-package com.example.administrator.notetest.UI;
+package com.example.administrator.notetest.View;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -84,9 +84,7 @@ public class Activity_Search extends AppCompatActivity{
                 updateData(position);
             }
         });
-
         }
-
 
     private List<NoteMsg> SearchData(String content) {
         list.clear();

@@ -1,6 +1,5 @@
-package com.example.administrator.notetest.UI;
+package com.example.administrator.notetest.View;
 
-import android.content.ContentValues;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -12,7 +11,8 @@ import android.widget.Spinner;
 
 import com.example.administrator.notetest.NoteConstant;
 import com.example.administrator.notetest.R;
-import com.example.administrator.notetest.SQLite.MyContentProvider;
+import com.example.administrator.notetest.presenter.SQLitePresenter;
+import com.example.administrator.notetest.presenter.impl.SQLitePresenterImpl;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -30,6 +30,7 @@ public class Activity_update extends AppCompatActivity {
     private String[] arr;
     private int spinnerIndex;
     private String mtype;
+    private SQLitePresenter mSQLitePresenter=new SQLitePresenterImpl();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -79,7 +80,7 @@ public class Activity_update extends AppCompatActivity {
         String date = mFormat.format(new Date());
         String type=mtype;
 
-        ContentValues values=new ContentValues();
+/*        ContentValues values=new ContentValues();
         values.put(NoteConstant.NOTE_ID, id);
         values.put(NoteConstant.NOTE_TITLE, title);
         values.put(NoteConstant.NOTE_TYPE, type);
@@ -87,14 +88,15 @@ public class Activity_update extends AppCompatActivity {
         values.put(NoteConstant.NOTE_DATE, date);
         values.put(NoteConstant.NOTE_SPINNER_INDEX,spinnerIndex);
 
-        getContentResolver().update(MyContentProvider.notebook,values,"id="+id,null);
+        getContentResolver().update(MyContentProvider.notebook,values,"id="+id,null);*/
 
+        mSQLitePresenter.update(this,id,title,type,content,date,spinnerIndex);
         finish();
 
     }
 
     private void getData() {
-        id=Integer.parseInt(getIntent().getStringExtra(NoteConstant.NOTE_ID));
+        id=getIntent().getIntExtra(NoteConstant.NOTE_ID,0);
         String title=getIntent().getStringExtra(NoteConstant.NOTE_TITLE);
         String content=getIntent().getStringExtra(NoteConstant.NOTE_CONTENT);
         int spinnerIndex=getIntent().getIntExtra(NoteConstant.NOTE_SPINNER_INDEX,0);
